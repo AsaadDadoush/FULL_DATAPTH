@@ -4,12 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3aa8f1e3-a0bf-404d-b9b9-d299a6fb9f7f" name="Changes" comment="test">
-      <change afterPath="$PROJECT_DIR$/registers.py" afterDir="false" />
+    <list default="true" id="3aa8f1e3-a0bf-404d-b9b9-d299a6fb9f7f" name="Changes" comment="update + TODO">
+      <change afterPath="$PROJECT_DIR$/ALU.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mux32_1.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ins_dec.v" beforeDir="false" afterPath="$PROJECT_DIR$/ins_dec.v" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/And_gate.py" beforeDir="false" afterPath="$PROJECT_DIR$/And_gate.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/andG.v" beforeDir="false" afterPath="$PROJECT_DIR$/andG.v" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/mem.py" beforeDir="false" afterPath="$PROJECT_DIR$/mem.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/memory.v" beforeDir="false" afterPath="$PROJECT_DIR$/memory.v" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/registers.py" beforeDir="false" afterPath="$PROJECT_DIR$/registers.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tb_andG.v" beforeDir="false" afterPath="$PROJECT_DIR$/tb_andG.v" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -35,7 +38,28 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
   </component>
-  <component name="RunManager" selected="Python.registers">
+  <component name="RunManager" selected="Python.ALU">
+    <configuration name="ALU" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="FULL_DATAPTH" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/ALU.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="And_gate" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="FULL_DATAPTH" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -49,27 +73,6 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/And_gate.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="Instruction decoder" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="FULL_DATAPTH" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Instruction decoder.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -99,7 +102,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="mem" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="mux32_1" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="FULL_DATAPTH" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -111,7 +114,7 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/mem.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/mux32_1.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -164,19 +167,19 @@
     </configuration>
     <list>
       <item itemvalue="Python.Unnamed" />
-      <item itemvalue="Python.Instruction decoder" />
-      <item itemvalue="Python.mem" />
       <item itemvalue="Python.And_gate" />
       <item itemvalue="Python.test" />
       <item itemvalue="Python.registers" />
+      <item itemvalue="Python.mux32_1" />
+      <item itemvalue="Python.ALU" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.ALU" />
+        <item itemvalue="Python.mux32_1" />
         <item itemvalue="Python.registers" />
-        <item itemvalue="Python.test" />
-        <item itemvalue="Python.Instruction decoder" />
-        <item itemvalue="Python.mem" />
         <item itemvalue="Python.And_gate" />
+        <item itemvalue="Python.test" />
       </list>
     </recent_temporary>
   </component>
@@ -196,7 +199,14 @@
       <option name="project" value="LOCAL" />
       <updated>1637194475073</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="update + TODO">
+      <created>1637432445753</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1637432445753</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -213,7 +223,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="test" />
-    <option name="LAST_COMMIT_MESSAGE" value="test" />
+    <MESSAGE value="update + TODO" />
+    <option name="LAST_COMMIT_MESSAGE" value="update + TODO" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

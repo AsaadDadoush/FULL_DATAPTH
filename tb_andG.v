@@ -1,7 +1,7 @@
 module tb_andG;
 
-reg in1;
-reg in2;
+reg [31:0] in1;
+reg [31:0] in2;
 wire out;
 
 initial begin
