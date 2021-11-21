@@ -5,7 +5,7 @@ reg [31:0] data_in;
 reg enable;
 reg clk;
 wire [31:0] data_out;
-reg [1:0] size;
+reg [2:0] size;
 
 initial begin
     $from_myhdl(

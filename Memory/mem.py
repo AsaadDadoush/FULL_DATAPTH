@@ -1,4 +1,3 @@
-import random
 import struct
 
 from myhdl import *
@@ -44,8 +43,6 @@ def to_number(buff: bytearray, size, signed, little_endian=True):
 program = Memory()
 program.load_binary_file(path="C:/Users/asaad/Desktop/test2/V2Code", starting_address=0)
 program.load_binary_file(path="C:/Users/asaad/Desktop/test2/V2Data", starting_address=8191)
-print(program.Max_Address)
-
 
 @block
 def memory(addres, data_in, enable, clk, data_out, size):
@@ -57,22 +54,23 @@ def memory(addres, data_in, enable, clk, data_out, size):
             if size == 1:
                 MainMemory[addres].next = data_in[8:0]
 
-            elif size == 2:
+            if size == 2:
                 MainMemory[addres].next = data_in[8:0]
-                MainMemory[addres + 1].next = data_in[16:8]
+                MainMemory[addres + 1].next = data_in[16:9]
 
-            elif size == 4:
+            if size == 4:
                 MainMemory[addres].next = data_in[8:0]
-                MainMemory[addres + 1].next = data_in[16:8]
-                MainMemory[addres + 2].next = data_in[24:16]
-                MainMemory[addres + 3].next = data_in[32:24]
+                MainMemory[addres + 1].next = data_in[16:9]
+                MainMemory[addres + 2].next = data_in[24:17]
+                MainMemory[addres + 3].next = data_in[32:25]
 
         if size == 1:
             data_out.next = MainMemory[addres]
         elif size == 2:
-            data_out.next = concat(bin(MainMemory[addres + 1],8), bin(MainMemory[addres], 8))
+            data_out.next = concat("00000000", "00000000", bin(MainMemory[addres + 1], 8), bin(MainMemory[addres], 8))
         elif size == 4:
-            data_out.next = concat(bin(MainMemory[addres + 3], 8), bin(MainMemory[addres + 2], 8),bin(MainMemory[addres + 1], 8), bin(MainMemory[addres], 8))
+            data_out.next = concat(bin(MainMemory[addres + 3], 8), bin(MainMemory[addres + 2], 8),
+                                   bin(MainMemory[addres + 1], 8), bin(MainMemory[addres], 8))
 
     return instances()
 
@@ -99,21 +97,23 @@ def testbench():
         enable.next = 1
         yield delay(2)
         for i in range(12284):
-            size.next = 1
+            size.next = 2
             yield delay(1)
-            addres.next, data_in.next = i, intbv(to_number(program.read(i, 1), 1, True))[32:]
+            data_in.next, addres.next = intbv(to_number(program.read(i, 1), 1, True))[32:], i
             yield delay(1)
-            print("%s  | %s |   %s  |  %s " % \
-                  (bin(addres, 12), bin(data_in, 8), bin(data_out, 8), bin(enable)))
-
-        enable.next = 0
-        yield delay(2)
+            print("%s  | %s |   %s  |  %s " % (addres + 0, data_in + 0, data_out + 0, bin(enable)))
         for i in range(12283):
-            size.next = 4
+            size.next = 1
             addres.next = i
+            enable.next = 0
             yield delay(2)
             print("%s  | %s |   %s  |  %s " % (addres + 0, data_in + 0, data_out + 0, bin(enable)))
-        yield delay(1)
+        # size.next = 1
+        # addres.next = 8196
+        # yield delay(2)
+        # print(data_out + 0)
+        # yield delay(1)
+        # print(to_number(program.read(8192, 4), 4, True))
 
     return instances()
 
@@ -124,7 +124,7 @@ def convert():
     data_out = Signal(intbv(0)[32:])
     enable = Signal(bool(0))
     clk = Signal(bool(0))
-    size = Signal(intbv(0)[2:])
+    size = Signal(intbv(0)[3:])
     tst = memory(addres, data_in, enable, clk, data_out, size)
     tst.convert(hdl='Verilog')
 
@@ -132,4 +132,3 @@ def convert():
 convert()
 tb = testbench()
 tb.run_sim(90000)
-
