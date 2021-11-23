@@ -48,7 +48,7 @@ def alu(a, b, sel, out):
             else:
                 out.next = 0
         # Branch <=
-        elif sel == 11:
+        else:
             if a <= b:
                 out.next = 1
             else:

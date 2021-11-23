@@ -1,6 +1,7 @@
 from myhdl import *
 from random import randrange
 
+
 @block
 def barrel_shifter(load_value, load_input, shift_reg):
 

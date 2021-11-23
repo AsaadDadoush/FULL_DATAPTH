@@ -5,18 +5,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3aa8f1e3-a0bf-404d-b9b9-d299a6fb9f7f" name="Changes" comment="Update">
-      <change afterPath="$PROJECT_DIR$/PC/PC_gen.v" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/PC/PC_genrator.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/PC/tb_PC_gen.v" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/shifter/barrel_shifter.v" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/shifter/shifter.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/shifter/tb_barrel_shifter.v" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv.rar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Control/Control.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/extender/extender.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/extender/extender.v" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/extender/tb_extender.v" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ALU/ALU.py" beforeDir="false" afterPath="$PROJECT_DIR$/ALU/ALU.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ALU/alu.v" beforeDir="false" afterPath="$PROJECT_DIR$/ALU/alu.v" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Memory/mem.py" beforeDir="false" afterPath="$PROJECT_DIR$/Memory/mem.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Memory/memory.v" beforeDir="false" afterPath="$PROJECT_DIR$/Memory/memory.v" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Memory/tb_memory.v" beforeDir="false" afterPath="$PROJECT_DIR$/Memory/tb_memory.v" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Decoder/Instruction decoder.py" beforeDir="false" afterPath="$PROJECT_DIR$/Decoder/Instruction decoder.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Decoder/ins_dec.v" beforeDir="false" afterPath="$PROJECT_DIR$/Decoder/ins_dec.v" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Decoder/tb_ins_dec.v" beforeDir="false" afterPath="$PROJECT_DIR$/Decoder/tb_ins_dec.v" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shifter/shifter.py" beforeDir="false" afterPath="$PROJECT_DIR$/shifter/shifter.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -63,8 +63,8 @@
       <recent name="C:\Users\asaad\PycharmProjects\FULL_DATAPTH\Mux" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.shifter">
-    <configuration name="ALU (1)" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="Python.Instruction decoder">
+    <configuration name="ALU" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="FULL_DATAPTH" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -85,7 +85,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="ALU" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="Instruction decoder" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="FULL_DATAPTH" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -93,32 +93,11 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Decoder" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="C:\Users\asaad\PycharmProjects\FULL_DATAPTH\ALU\ALU.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="PC_genrator" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="FULL_DATAPTH" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/PC" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/PC/PC_genrator.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Decoder/Instruction decoder.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -148,7 +127,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="mem" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="extender" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="FULL_DATAPTH" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -156,11 +135,11 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Memory" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/extender" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Memory/mem.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/extender/extender.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -190,21 +169,42 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="test" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="FULL_DATAPTH" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/test.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <list>
       <item itemvalue="Python.Unnamed" />
-      <item itemvalue="Python.ALU" />
-      <item itemvalue="Python.ALU (1)" />
-      <item itemvalue="Python.PC_genrator" />
-      <item itemvalue="Python.mem" />
       <item itemvalue="Python.shifter" />
+      <item itemvalue="Python.extender" />
+      <item itemvalue="Python.Instruction decoder" />
+      <item itemvalue="Python.ALU" />
+      <item itemvalue="Python.test" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.shifter" />
-        <item itemvalue="Python.mem" />
-        <item itemvalue="Python.PC_genrator" />
-        <item itemvalue="Python.ALU (1)" />
+        <item itemvalue="Python.Instruction decoder" />
+        <item itemvalue="Python.test" />
         <item itemvalue="Python.ALU" />
+        <item itemvalue="Python.extender" />
+        <item itemvalue="Python.shifter" />
       </list>
     </recent_temporary>
   </component>
@@ -245,7 +245,14 @@
       <option name="project" value="LOCAL" />
       <updated>1637440595904</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Update">
+      <created>1637513208541</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1637513208541</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
