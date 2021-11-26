@@ -1,41 +1,46 @@
 from myhdl import *
-from random import randrange
 
 
 @block
-def barrel_shifter(load_value, load_input, shift_reg):
-
+def shifter(data_in, sel, data_out):
     @always_comb
-    def shift_bit():
-        load_value.next = load_input << shift_reg
+    def shift():
+        if sel == 0:
+            data_out.next = intbv(data_in.signed() << 1)[32:]
+        elif sel == 1:
+            data_out.next = intbv(data_in.signed() << 12)[32:]
+        elif sel == 2:
+            data_out.next = data_in.signed()[32:]
+        elif sel == 3:
+            data_out.next = data_in.signed()[32:]
 
-    return shift_bit
+    return shift
+
 
 @block
 def test_bench():
-    load_value = Signal(intbv(0)[32:])
-    load_input = Signal(intbv(0)[32:])
-    shift_reg = Signal(intbv(0)[2:])
-    test_bench_shifter = barrel_shifter(load_value, load_input,shift_reg)
+    data_in = Signal(intbv(0)[32:])
+    data_out = Signal(intbv(0)[32:])
+    sel = Signal(intbv(0)[2:])
+    ins = shifter(data_in, sel, data_out)
 
     @instance
     def monitor():
-        for i in range(10):
-            load_input.next = randrange(2 ** 12)
-            shift_reg.next = 1
-            yield delay(1)
-            print("  %s  :    %s" % (load_input + 0, load_value + 0))
+        sel.next = 1
+        data_in.next = 0b11111111111111111111111111110110
+        yield delay(1)
+        print(bin(data_out, 32))
     return instances()
 
 
 def convert():
-    load_value = Signal(intbv(0)[32:])
-    load_input = Signal(intbv(0)[32:])
-    shift_reg = Signal(intbv(0)[2:])
-    conv = barrel_shifter(load_value, load_input,shift_reg)
-    conv.convert(hdl='Verilog')
+    data_in = Signal(intbv(0)[32:])
+    data_out = Signal(intbv(0)[32:])
+    sel = Signal(intbv(0)[2:])
+    ins = shifter(data_in, sel, data_out)
+    ins.convert(hdl='Verilog')
 
 
-convert()
 tst = test_bench()
-tst.run_sim(50)
+tst.run_sim()
+convert()

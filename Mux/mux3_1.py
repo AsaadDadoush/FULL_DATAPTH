@@ -26,7 +26,7 @@ def tb():
     i0 = Signal(intbv(0)[32:])
     i1 = Signal(intbv(0)[32:])
     i2 = Signal(intbv(0)[32:])
-    sel = Signal(intbv(0)[32:])
+    sel = Signal(intbv(0)[2:])
     out = Signal(intbv(0)[32:])
     mux = mux_3to1(i0, i1, i2, sel, out)
 
