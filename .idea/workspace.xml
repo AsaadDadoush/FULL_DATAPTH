@@ -5,38 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3aa8f1e3-a0bf-404d-b9b9-d299a6fb9f7f" name="Changes" comment="Update">
-      <change afterPath="$PROJECT_DIR$/Control/control.v" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Control/tb_control.v" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Mux/mux3_1.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Mux/mux_3to1.v" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Mux/tb_mux_3to1.v" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ALU/ALU.py" beforeDir="false" afterPath="$PROJECT_DIR$/ALU/ALU.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ALU/alu.v" beforeDir="false" afterPath="$PROJECT_DIR$/ALU/alu.v" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ALU/tb_alu.v" beforeDir="false" afterPath="$PROJECT_DIR$/ALU/tb_alu.v" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AND/And_gate.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AND/andG.v" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AND/tb_andG.v" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Control/Control.py" beforeDir="false" afterPath="$PROJECT_DIR$/Control/control.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Decoder/Instruction decoder.py" beforeDir="false" afterPath="$PROJECT_DIR$/Decoder/Instruction decoder.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Decoder/ins_dec.v" beforeDir="false" afterPath="$PROJECT_DIR$/Decoder/ins_dec.v" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Decoder/tb_ins_dec.v" beforeDir="false" afterPath="$PROJECT_DIR$/Decoder/tb_ins_dec.v" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Memory/mem.py" beforeDir="false" afterPath="$PROJECT_DIR$/Memory/mem.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Memory/memory.v" beforeDir="false" afterPath="$PROJECT_DIR$/Memory/memory.v" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Mux/mux32_1.py" beforeDir="false" afterPath="$PROJECT_DIR$/Mux/mux2_1.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Mux/mux_32to1.v" beforeDir="false" afterPath="$PROJECT_DIR$/Mux/mux2_1.v" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Mux/tb_mux_32to1.v" beforeDir="false" afterPath="$PROJECT_DIR$/Mux/tb_mux2_1.v" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PC/PC.py" beforeDir="false" afterPath="$PROJECT_DIR$/PC/PC.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PC/PC_gen.v" beforeDir="false" afterPath="$PROJECT_DIR$/PC/PC_gen.v" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PC/PC_genrator.py" beforeDir="false" afterPath="$PROJECT_DIR$/PC/PC_genrator.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PC/pc.v" beforeDir="false" afterPath="$PROJECT_DIR$/PC/pc.v" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PC/tb_PC_gen.v" beforeDir="false" afterPath="$PROJECT_DIR$/PC/tb_PC_gen.v" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PC/tb_pc.v" beforeDir="false" afterPath="$PROJECT_DIR$/PC/tb_pc.v" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/extender/extender.py" beforeDir="false" afterPath="$PROJECT_DIR$/extender/extender.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/extender/extender.v" beforeDir="false" afterPath="$PROJECT_DIR$/extender/extender.v" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/extender/tb_extender.v" beforeDir="false" afterPath="$PROJECT_DIR$/extender/tb_extender.v" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/register/registers.v" beforeDir="false" afterPath="$PROJECT_DIR$/register/registers.v" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shifter/barrel_shifter.v" beforeDir="false" afterPath="$PROJECT_DIR$/shifter/barrel_shifter.v" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Control/control.py" beforeDir="false" afterPath="$PROJECT_DIR$/Control/control.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Control/control.v" beforeDir="false" afterPath="$PROJECT_DIR$/Control/control.v" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -83,7 +54,7 @@
       <recent name="C:\Users\asaad\PycharmProjects\FULL_DATAPTH\Mux" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.extender">
+  <component name="RunManager" selected="Python.control">
     <configuration name="Unnamed" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
       <module name="FULL_DATAPTH" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -97,6 +68,27 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="SCRIPT_NAME" value="" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="control" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="FULL_DATAPTH" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Control" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Control/control.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -189,42 +181,21 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="shifter" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="FULL_DATAPTH" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/shifter" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/shifter/shifter.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
     <list>
       <item itemvalue="Python.Unnamed" />
-      <item itemvalue="Python.shifter" />
       <item itemvalue="Python.mux2_1" />
       <item itemvalue="Python.mux2_1 (1)" />
       <item itemvalue="Python.mux3_1" />
       <item itemvalue="Python.extender" />
+      <item itemvalue="Python.control" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.control" />
         <item itemvalue="Python.extender" />
         <item itemvalue="Python.mux3_1" />
         <item itemvalue="Python.mux2_1 (1)" />
         <item itemvalue="Python.mux2_1" />
-        <item itemvalue="Python.shifter" />
       </list>
     </recent_temporary>
   </component>
@@ -279,7 +250,14 @@
       <option name="project" value="LOCAL" />
       <updated>1637649155416</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Update">
+      <created>1637959021763</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1637959021763</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">

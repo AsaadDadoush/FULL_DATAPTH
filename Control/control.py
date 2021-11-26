@@ -8,6 +8,15 @@ def control(opcode, func3, func7, branch_result, size_sel, operation_sel, enable
             PC_or_Address, PC_or_rs1, ALU_or_load_or_immShiftedBy12):
     @always_comb
     def control_cir():
+        size_sel.next = 0
+        enable_write.next = 0
+        PC_genrator_sel.next = 0
+        # todo
+        imm_sel.next = 0
+        rs2_or_imm_or_4.next = 0
+        PC_or_Address.next = 0
+        PC_or_rs1.next = 0
+        ALU_or_load_or_immShiftedBy12.next = 0
         # R-type
         if opcode == 0b0110011:
             size_sel.next = 2
@@ -79,7 +88,7 @@ def control(opcode, func3, func7, branch_result, size_sel, operation_sel, enable
                 operation_sel.next = 12
 
             # Remainder (U)
-            elif func3 == 0x7 and func7 == 0x01:
+            else:
                 operation_sel.next = 12
 
         # I-type
@@ -125,7 +134,7 @@ def control(opcode, func3, func7, branch_result, size_sel, operation_sel, enable
                 operation_sel.next = 10
 
             # Set less than imm (U)
-            elif func3 == 0x3:
+            else:
                 operation_sel.next = 10
 
         # I-type (LOAD instructions)
@@ -159,7 +168,7 @@ def control(opcode, func3, func7, branch_result, size_sel, operation_sel, enable
                 operation_sel.next = 0
             #todo
             # load Half(U)
-            elif func3 == 0x5:
+            else:
                 size_sel.next = 1
                 operation_sel.next = 0
 
@@ -184,7 +193,7 @@ def control(opcode, func3, func7, branch_result, size_sel, operation_sel, enable
                 operation_sel.next = 0
 
             # Store word
-            elif func3 == 0x2:
+            else:
                 size_sel.next = 2
                 operation_sel.next = 0
 
@@ -234,7 +243,7 @@ def control(opcode, func3, func7, branch_result, size_sel, operation_sel, enable
                 else:
                     PC_genrator_sel.next = 0
             # Branch <=(U)
-            elif func3 == 0x7:
+            else:
                 operation_sel.next = 11
                 if branch_result == 1:
                     PC_genrator_sel.next = 1
