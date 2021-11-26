@@ -2,7 +2,7 @@ module tb_alu;
 
 reg [31:0] a;
 reg [31:0] b;
-reg [3:0] sel;
+reg [4:0] sel;
 wire [31:0] out;
 
 initial begin

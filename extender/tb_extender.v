@@ -1,20 +1,35 @@
 module tb_extender;
 
-reg [19:0] input_12or20;
-wire [31:0] output32;
+reg [2:0] sel;
+reg [11:0] immI;
+reg [11:0] immS;
+reg [11:0] immB;
+reg [19:0] immU;
+reg [19:0] immJ;
+wire [31:0] imm32;
 
 initial begin
     $from_myhdl(
-        input_12or20
+        sel,
+        immI,
+        immS,
+        immB,
+        immU,
+        immJ
     );
     $to_myhdl(
-        output32
+        imm32
     );
 end
 
 extender dut(
-    input_12or20,
-    output32
+    sel,
+    immI,
+    immS,
+    immB,
+    immU,
+    immJ,
+    imm32
 );
 
 endmodule

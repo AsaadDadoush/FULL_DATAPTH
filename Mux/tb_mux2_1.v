@@ -1,4 +1,4 @@
-module tb_mux_32to1;
+module tb_mux2_1;
 
 reg sel;
 wire [31:0] out;
@@ -16,7 +16,7 @@ initial begin
     );
 end
 
-mux_32to1 dut(
+mux2_1 dut(
     sel,
     out,
     imm,

@@ -1,16 +1,16 @@
-module tb_PC_gen;
+module tb_mux_3to1;
 
-reg [31:0] PC;
-reg [31:0] rs1;
-reg [31:0] imm;
+reg [31:0] i0;
+reg [31:0] i1;
+reg [31:0] i2;
 reg [1:0] sel;
 wire [31:0] out;
 
 initial begin
     $from_myhdl(
-        PC,
-        rs1,
-        imm,
+        i0,
+        i1,
+        i2,
         sel
     );
     $to_myhdl(
@@ -18,10 +18,10 @@ initial begin
     );
 end
 
-PC_gen dut(
-    PC,
-    rs1,
-    imm,
+mux_3to1 dut(
+    i0,
+    i1,
+    i2,
     sel,
     out
 );

@@ -6,7 +6,7 @@ randrange = random.randrange
 
 
 @block
-def mux_32to1(sel, out, imm, rs2):
+def mux2_1(sel, out, imm, rs2):
     @always_comb
     def mux():
         if sel == 0:
@@ -22,7 +22,7 @@ def testbench():
     imm = Signal(intbv(0)[32:])
     rs2 = Signal(intbv(0)[32:])
     out = Signal(intbv(0)[32:])
-    mux = mux_32to1(sel, out, imm, rs2)
+    mux = mux2_1(sel, out, imm, rs2)
 
     @instance
     def stimulus():
@@ -39,7 +39,7 @@ def convert():
     imm = Signal(intbv(0)[32:])
     rs2 = Signal(intbv(0)[32:])
     out = Signal(intbv(0)[32:])
-    mux = mux_32to1(sel, out, imm, rs2)
+    mux = mux2_1(sel, out, imm, rs2)
     mux.convert(hdl='Verilog')
 
 

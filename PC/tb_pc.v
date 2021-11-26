@@ -1,7 +1,7 @@
 module tb_pc;
 
-reg [13:0] pass_input;
-wire [13:0] out;
+reg [31:0] pass_input;
+wire [31:0] out;
 reg reset;
 reg clk;
 

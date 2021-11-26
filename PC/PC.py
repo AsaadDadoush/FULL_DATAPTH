@@ -8,8 +8,8 @@ def pc(pass_input,out,reset,clk):
 
 @block
 def test():
-    pass_input = Signal(intbv(0)[14:]) #to represrent 16384
-    out = Signal(intbv(0)[14:])
+    pass_input = Signal(intbv(0)[32:]) #to represrent 16384
+    out = Signal(intbv(0)[32:])
     clk = Signal(bool(0))
     reset= ResetSignal(0, active=1, isasync=True)
     ins = pc(pass_input, out,reset, clk)
@@ -30,8 +30,8 @@ def test():
     return instances()
 
 def convert():
-    pass_input = Signal(intbv(0)[14:])  # to represrent 16384
-    out = Signal(intbv(0)[14:])
+    pass_input = Signal(intbv(0)[32:])  # to represrent 16384
+    out = Signal(intbv(0)[32:])
     clk = Signal(bool(0))
     reset = ResetSignal(0, active=1, isasync=True)
     test = pc(pass_input, out,reset, clk)
