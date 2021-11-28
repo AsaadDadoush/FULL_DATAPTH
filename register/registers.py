@@ -2,10 +2,10 @@ from myhdl import *
 
 
 @block
-def registers(rs1, rs2, rd, rs1_out, rs2_out, clk, enable, data):
+def registers(rs1, rs2, rd, rs1_out, rs2_out, enable, data):
     Reg = [Signal(intbv(0)[32:]) for i in range(32)]
 
-    @always(clk.posedge)
+    @always(rs1, rs2, rd)
     def register_sub():
         rs1_out.next = Reg[rs1]
         rs2_out.next = Reg[rs2]
@@ -27,14 +27,11 @@ def testbench():
     rd = Signal(intbv(0)[5:])
     rs1_out = Signal(intbv(0)[32:])
     rs2_out = Signal(intbv(0)[32:])
-    clk = Signal(bool(0))
     enable = Signal(bool(0))
     data = Signal(intbv(0)[32:])
-    reg = registers(rs1, rs2, rd, rs1_out, rs2_out, clk, enable, data)
+    reg = registers(rs1, rs2, rd, rs1_out, rs2_out, enable, data)
 
-    @always(delay(2))
-    def clkgen():
-        clk.next = not clk
+
 
     @instance
     def stimulus():
@@ -76,10 +73,9 @@ def convert():
     rd = Signal(intbv(0)[5:])
     rs1_out = Signal(intbv(0)[32:])
     rs2_out = Signal(intbv(0)[32:])
-    clk = Signal(bool(0))
     enable = Signal(bool(0))
     data = Signal(intbv(0)[32:])
-    reg = registers(rs1, rs2, rd, rs1_out, rs2_out, clk, enable, data)
+    reg = registers(rs1, rs2, rd, rs1_out, rs2_out, enable, data)
     reg.convert(hdl='Verilog')
 
 

@@ -5,15 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3aa8f1e3-a0bf-404d-b9b9-d299a6fb9f7f" name="Changes" comment="Update">
-      <change afterPath="$PROJECT_DIR$/Mux/Mux8_1.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ALU/ALU.py" beforeDir="false" afterPath="$PROJECT_DIR$/ALU/ALU.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ALU/alu.v" beforeDir="false" afterPath="$PROJECT_DIR$/ALU/alu.v" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Control/control.py" beforeDir="false" afterPath="$PROJECT_DIR$/Control/control.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Control/control.v" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Control/tb_control.v" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Mux/mux2_1.v" beforeDir="false" afterPath="$PROJECT_DIR$/Mux/mux2_1.v" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Mux/mux_3to1.v" beforeDir="false" afterPath="$PROJECT_DIR$/Mux/mux_3to1.v" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/register/registers.py" beforeDir="false" afterPath="$PROJECT_DIR$/register/registers.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/register/registers.v" beforeDir="false" afterPath="$PROJECT_DIR$/register/registers.v" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/register/tb_registers.v" beforeDir="false" afterPath="$PROJECT_DIR$/register/tb_registers.v" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -60,7 +55,7 @@
       <recent name="C:\Users\asaad\PycharmProjects\FULL_DATAPTH\Mux" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.control">
+  <component name="RunManager" selected="Python.registers">
     <configuration name="ALU" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="FULL_DATAPTH" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -74,27 +69,6 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/ALU/ALU.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="Instruction decoder" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="FULL_DATAPTH" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Decoder" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Decoder/Instruction decoder.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -187,21 +161,42 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="registers" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="FULL_DATAPTH" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/register" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/register/registers.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <list>
       <item itemvalue="Python.Unnamed" />
-      <item itemvalue="Python.Instruction decoder" />
       <item itemvalue="Python.ALU" />
       <item itemvalue="Python.Mux8_1" />
       <item itemvalue="Python.mux2_1" />
       <item itemvalue="Python.control" />
+      <item itemvalue="Python.registers" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.registers" />
         <item itemvalue="Python.control" />
         <item itemvalue="Python.Mux8_1" />
         <item itemvalue="Python.mux2_1" />
         <item itemvalue="Python.ALU" />
-        <item itemvalue="Python.Instruction decoder" />
       </list>
     </recent_temporary>
   </component>
@@ -284,7 +279,14 @@
       <option name="project" value="LOCAL" />
       <updated>1638038426250</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="Update">
+      <created>1638122853404</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1638122853404</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">

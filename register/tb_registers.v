@@ -5,7 +5,6 @@ reg [4:0] rs2;
 reg [4:0] rd;
 wire [31:0] rs1_out;
 wire [31:0] rs2_out;
-reg clk;
 reg enable;
 reg [31:0] data;
 
@@ -14,7 +13,6 @@ initial begin
         rs1,
         rs2,
         rd,
-        clk,
         enable,
         data
     );
@@ -30,7 +28,6 @@ registers dut(
     rd,
     rs1_out,
     rs2_out,
-    clk,
     enable,
     data
 );
