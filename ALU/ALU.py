@@ -42,13 +42,13 @@ def alu(a, b, sel, out):
                 out.next = 1
             else:
                 out.next = 0
-        # Branch < OR Set less than
+        # Branch < & Set less than
         elif sel == 10:
             if a.signed() < b.signed():
                 out.next = 1
             else:
                 out.next = 0
-        # Set less than (U)
+        # Branch < (U) & Set less than (U)
         elif sel == 11:
             if a.signed() < b[32:]:
                 out.next = 1
@@ -64,20 +64,21 @@ def alu(a, b, sel, out):
         elif sel == 13:
             out.next = a.signed() >> b[5:].signed()
 
-        # Branch < (U)
-        elif sel == 14:
-            if a.signed() < b[32:]:
-                out.next = 1
-            else:
-                out.next = 0
         # Branch >= (U)
-        elif sel == 15:
+        elif sel == 14:
             if a.signed() > b[32:]:
                 out.next = 1
             else:
                 out.next = 0
-        else:
+        # DIV (U)
+        elif sel == 15:
+            out.next = a.signed() // b[32:]
+        # Remainder
+        elif sel == 16:
             out.next = a.signed() % b.signed()
+        # Remainder (U)
+        else:
+            out.next = a.signed() % b[32:]
 
     return alu
 

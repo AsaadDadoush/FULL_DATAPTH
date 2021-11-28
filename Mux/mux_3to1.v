@@ -25,20 +25,10 @@ reg [31:0] out;
 
 
 always @(i0, i2, sel, i1) begin: MUX_3TO1_MUX3TO1
-    case (sel)
-        'h0: begin
-            out = i0;
-        end
-        'h1: begin
-            out = i1;
-        end
-        'h2: begin
-            out = i2;
-        end
-        default: begin
-            out = i2;
-        end
-    endcase
+   if((sel == 0)) begin
+        out = i0;
+   end
+   
 end
 
 endmodule
