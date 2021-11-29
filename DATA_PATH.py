@@ -1,9 +1,12 @@
+import struct
+
 from myhdl import *
 from ALU import alu
 from control import control
 from extender import extender
 from Instruction_decoder import ins_dec
 from mem import memory
+from memory import Memory
 from mux2_1 import mux2_1
 from mux3_1 import mux_3to1
 from Mux8_1 import mux8_1
@@ -14,13 +17,11 @@ from shifter import shifter
 
 
 @block
-def top_level(reset, clk):
+def top_level(clk, reset, four):
     # ======================= Lines ======================= #
 
     gen_to_PC = Signal(intbv(0)[32:])
     pc_out = Signal(intbv(0)[32:])
-    clk = Signal(bool(0))
-    reset = ResetSignal(0, active=1, isasync=True)
     addres = Signal(intbv(0)[32:])
     memory_out = Signal(intbv(0)[32:])
     rs1 = Signal(intbv(0)[5:0])
@@ -42,7 +43,6 @@ def top_level(reset, clk):
     opcode = Signal(intbv(0)[7:])
     func3 = Signal(intbv(0)[5:])
     func7 = Signal(intbv(0)[5:])
-    branch_result = Signal(intbv(0)[32:])
     size_sel = Signal(intbv(0)[2:])
     operation_sel = Signal(intbv(0)[4:])
     enable_write = Signal(bool(0))
@@ -54,10 +54,9 @@ def top_level(reset, clk):
     ALU_or_load_or_immShiftedBy12 = Signal(intbv(0)[2:])
     Shift_amount = Signal(intbv(0)[2:])
     Enable_Reg = Signal(bool(0))
-    msb_or_zero = Signal(bool(0))
     input_for_shifter = Signal(intbv(0)[32:])
     shifter_out = Signal(intbv(0)[32:])
-    four = Signal(intbv(4)[32:])
+    four.next = Signal(intbv(4)[32:])
     a = Signal(intbv(0)[32:])
     b = Signal(intbv(0)[32:])
     alu_out = Signal(intbv(0)[32:0])
@@ -89,15 +88,18 @@ def top_level(reset, clk):
     ALU = alu(a, b, operation_sel, alu_out)  # ALU
     # ======================== inputs ============= sel ========= out
     gen = PC_gen(pc_out, rs1_out, shifter_out, PC_genrator_sel, gen_to_PC)  # PC gen
-    cont = control(opcode, func3, func7, branch_result, size_sel, operation_sel, enable_write, PC_genrator_sel, imm_sel,
+    cont = control(opcode, func3, func7, alu_out, size_sel, operation_sel, enable_write, PC_genrator_sel, imm_sel,
                    rs2_or_imm_or_4,
-                   PC_or_Address, PC_or_rs1, ALU_or_load_or_immShiftedBy12, Shift_amount, Enable_Reg,
-                   msb_or_zero)  # Control
+                   PC_or_Address, PC_or_rs1, ALU_or_load_or_immShiftedBy12, Shift_amount, Enable_Reg)  # Control
+    return instances()
 
 
-    @always(clk.posedge)
-    def PC():
-        if reset == 1:
-            reset.next =
+def convert():
+    clk = Signal(bool(0))
+    reset = ResetSignal(0, active=1, isasync=True)
+    four = Signal(intbv(0)[32:])
+    ins = top_level(clk, reset, four)
+    ins.convert(hdl='Verilog')
 
 
+convert()
