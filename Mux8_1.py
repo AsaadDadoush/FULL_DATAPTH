@@ -56,10 +56,8 @@ def convert():
     ins = mux8_1(i0, i1, i2, i3, i4, out, sel)
     ins.convert(hdl='Verilog')
 
-
-tst = testbench()
-tst.run_sim()
-convert()
-
-
-
+#
+# tst = testbench()
+# tst.run_sim()
+# convert()
+#
