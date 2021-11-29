@@ -41,8 +41,8 @@ def to_number(buff: bytearray, size, signed, little_endian=True):
 
 
 program = Memory()
-program.load_binary_file(path="C:/Users/asaad/Desktop/test2/V2Code", starting_address=0)
-program.load_binary_file(path="C:/Users/asaad/Desktop/test2/V2Data", starting_address=8191)
+program.load_binary_file(path="D:/rarsProject/text.txt", starting_address=0)
+program.load_binary_file(path="D:/rarsProject/data.txt", starting_address=8191)
 
 @block
 def memory(addres, data_in, enable, clk, data_out, size):
@@ -96,12 +96,12 @@ def testbench():
 
         enable.next = 1
         yield delay(2)
-        for i in range(12284):
-            size.next = 0
-            yield delay(1)
-            data_in.next, addres.next = intbv(to_number(program.read(i, 1), 1, True))[32:], i
-            yield delay(1)
-            print("%s  | %s |   %s  |  %s " % (addres + 0, data_in + 0, data_out + 0, bin(enable)))
+        # for i in range(12284):
+        #     size.next = 0
+        #     yield delay(1)
+        #     data_in.next, addres.next = intbv(to_number(program.read(i, 1), 1, True))[32:], i
+        #     yield delay(1)
+        #     print("%s  | %s |   %s  |  %s " % (addres + 0, data_in + 0, data_out + 0, bin(enable)))
         for i in range(8280):
             size.next = 0
             addres.next = i
@@ -129,6 +129,6 @@ def convert():
     tst.convert(hdl='Verilog')
 
 
-convert()
-tb = testbench()
-tb.run_sim(90000)
+# convert()
+# tb = testbench()
+# tb.run_sim()
