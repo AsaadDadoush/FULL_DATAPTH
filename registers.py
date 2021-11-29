@@ -79,6 +79,6 @@ def convert():
     reg.convert(hdl='Verilog')
 
 
-convert()
-tst = testbench()
-tst.run_sim(50)
+# convert()
+# tst = testbench()
+# tst.run_sim(50)
