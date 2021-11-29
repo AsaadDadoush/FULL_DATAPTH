@@ -64,7 +64,7 @@ def top_level(clk, reset, four):
     # ======================= ins section ======================= #
 
     # ========= input == out ============
-    PC = pc(gen_to_PC, pc_out, reset, clk)  # PC
+    program_counter = pc(gen_to_PC, pc_out, reset, clk)  # PC
 
     # =================================== sel ======= out === i0 ==== i1
     mux_PC_or_ALU_to_memory = mux2_1(PC_or_Address, addres, pc_out, alu_out)  # mux PC or ALU to memory
@@ -73,9 +73,9 @@ def top_level(clk, reset, four):
     main_memory = memory(addres, rs2_out, enable_write, clk, memory_out, size_sel)  # memory
 
     # ================== input =============
-    Decode = ins_dec(memory_out, opcode, rd, func3, rs1, rs2, func7, immI, immS, immB, immU, immJ)  # Decoder
+    Decode_ins = ins_dec(memory_out, opcode, rd, func3, rs1, rs2, func7, immI, immS, immB, immU, immJ)  # Decoder
     # ================== inputs ========== outputs================== input
-    Reg = registers(rs1, rs2, rd, rs1_out, rs2_out, Enable_Reg, data_in_Reg)  # Reg
+    Regs = registers(rs1, rs2, rd, rs1_out, rs2_out, Enable_Reg, data_in_Reg)  # Reg
     ext = extender(immI, immS, immB, immU, immJ, imm32I, imm32S, imm32B, imm32U, imm32J)  # extend for imm
     mux_Reg = mux_3to1(alu_out, memory_out, shifter_out, ALU_or_load_or_immShiftedBy12, data_in_Reg)  # mux for Reg file
     mux_imm = mux8_1(imm32I, imm32S, imm32B, imm32U, imm32J, input_for_shifter, imm_sel)  # mux imm to shift
@@ -85,7 +85,7 @@ def top_level(clk, reset, four):
     mux_b = mux_3to1(rs2_out, shifter_out, four, rs2_or_imm_or_4, b)  # mux imm rs2 4
     # ============= sel == out===== inputs
     mux_a = mux2_1(PC_or_rs1, a, pc_out, rs1_out)  # mux PC rs1
-    ALU = alu(a, b, operation_sel, alu_out)  # ALU
+    ALU_Block = alu(a, b, operation_sel, alu_out)  # ALU
     # ======================== inputs ============= sel ========= out
     gen = PC_gen(pc_out, rs1_out, shifter_out, PC_genrator_sel, gen_to_PC)  # PC gen
     cont = control(opcode, func3, func7, alu_out, size_sel, operation_sel, enable_write, PC_genrator_sel, imm_sel,
