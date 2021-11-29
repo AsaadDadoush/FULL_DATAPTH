@@ -5,10 +5,42 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3aa8f1e3-a0bf-404d-b9b9-d299a6fb9f7f" name="Changes" comment="Update">
+      <change afterPath="$PROJECT_DIR$/DATA_PATH.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/md3ka.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/register/registers.py" beforeDir="false" afterPath="$PROJECT_DIR$/register/registers.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/register/registers.v" beforeDir="false" afterPath="$PROJECT_DIR$/register/registers.v" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/register/tb_registers.v" beforeDir="false" afterPath="$PROJECT_DIR$/register/tb_registers.v" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ALU/ALU.py" beforeDir="false" afterPath="$PROJECT_DIR$/ALU.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ALU/alu.v" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ALU/tb_alu.v" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Control/control.py" beforeDir="false" afterPath="$PROJECT_DIR$/control.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Decoder/Instruction decoder.py" beforeDir="false" afterPath="$PROJECT_DIR$/Instruction_decoder.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Decoder/ins_dec.v" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Decoder/tb_ins_dec.v" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Memory/mem.py" beforeDir="false" afterPath="$PROJECT_DIR$/mem.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Memory/memory.py" beforeDir="false" afterPath="$PROJECT_DIR$/memory.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Memory/memory.v" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Memory/tb_memory.v" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Mux/Mux8_1.py" beforeDir="false" afterPath="$PROJECT_DIR$/Mux8_1.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Mux/mux2_1.py" beforeDir="false" afterPath="$PROJECT_DIR$/mux2_1.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Mux/mux2_1.v" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Mux/mux3_1.py" beforeDir="false" afterPath="$PROJECT_DIR$/mux3_1.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Mux/mux_3to1.v" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Mux/tb_mux2_1.v" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Mux/tb_mux_3to1.v" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PC/PC.py" beforeDir="false" afterPath="$PROJECT_DIR$/PC.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PC/PC_gen.v" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PC/PC_genrator.py" beforeDir="false" afterPath="$PROJECT_DIR$/PC_genrator.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PC/pc.v" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PC/tb_PC_gen.v" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PC/tb_pc.v" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/extender/extender.py" beforeDir="false" afterPath="$PROJECT_DIR$/extender.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/extender/extender.v" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/extender/tb_extender.v" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/register/registers.py" beforeDir="false" afterPath="$PROJECT_DIR$/registers.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/register/registers.v" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/register/tb_registers.v" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/shifter/shifter.py" beforeDir="false" afterPath="$PROJECT_DIR$/shifter.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shifter/shifter.v" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/shifter/tb_shifter.v" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -48,35 +80,14 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\asaad\PycharmProjects\FULL_DATAPTH" />
       <recent name="C:\Users\asaad\PycharmProjects\FULL_DATAPTH\PC" />
       <recent name="C:\Users\asaad\PycharmProjects\FULL_DATAPTH\AND" />
       <recent name="C:\Users\asaad\PycharmProjects\FULL_DATAPTH\register" />
       <recent name="C:\Users\asaad\PycharmProjects\FULL_DATAPTH\Decoder" />
-      <recent name="C:\Users\asaad\PycharmProjects\FULL_DATAPTH\Mux" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.registers">
-    <configuration name="ALU" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="FULL_DATAPTH" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/ALU" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/ALU/ALU.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
+  <component name="RunManager" selected="Python.mem">
     <configuration name="Mux8_1" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="FULL_DATAPTH" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -89,7 +100,7 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Mux/Mux8_1.py" />
+      <option name="SCRIPT_NAME" value="C:\Users\asaad\PycharmProjects\FULL_DATAPTH\Mux8_1.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -131,7 +142,7 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Control/control.py" />
+      <option name="SCRIPT_NAME" value="C:\Users\asaad\PycharmProjects\FULL_DATAPTH\control.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -140,7 +151,28 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="mux2_1" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="mem" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="FULL_DATAPTH" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Memory" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="C:\Users\asaad\PycharmProjects\FULL_DATAPTH\mem.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="mux3_1" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="FULL_DATAPTH" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -152,7 +184,7 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Mux/mux2_1.py" />
+      <option name="SCRIPT_NAME" value="C:\Users\asaad\PycharmProjects\FULL_DATAPTH\mux3_1.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -173,7 +205,7 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/register/registers.py" />
+      <option name="SCRIPT_NAME" value="C:\Users\asaad\PycharmProjects\FULL_DATAPTH\registers.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -184,19 +216,19 @@
     </configuration>
     <list>
       <item itemvalue="Python.Unnamed" />
-      <item itemvalue="Python.ALU" />
       <item itemvalue="Python.Mux8_1" />
-      <item itemvalue="Python.mux2_1" />
       <item itemvalue="Python.control" />
       <item itemvalue="Python.registers" />
+      <item itemvalue="Python.mux3_1" />
+      <item itemvalue="Python.mem" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.mem" />
+        <item itemvalue="Python.mux3_1" />
         <item itemvalue="Python.registers" />
         <item itemvalue="Python.control" />
         <item itemvalue="Python.Mux8_1" />
-        <item itemvalue="Python.mux2_1" />
-        <item itemvalue="Python.ALU" />
       </list>
     </recent_temporary>
   </component>
@@ -286,7 +318,14 @@
       <option name="project" value="LOCAL" />
       <updated>1638122853404</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="Update">
+      <created>1638124866421</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1638124866421</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">

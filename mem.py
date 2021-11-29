@@ -102,12 +102,12 @@ def testbench():
             data_in.next, addres.next = intbv(to_number(program.read(i, 1), 1, True))[32:], i
             yield delay(1)
             print("%s  | %s |   %s  |  %s " % (addres + 0, data_in + 0, data_out + 0, bin(enable)))
-        for i in range(12285):
+        for i in range(8280):
             size.next = 0
             addres.next = i
             enable.next = 0
             yield delay(2)
-            print("%s  | %s |   %s  |  %s " % (addres + 0, data_in + 0, data_out + 0, bin(enable)))
+            print("%s  | %s |   %s  |  %s " % (addres + 0, data_in + 0, bin(data_out,32), bin(enable)))
         # size.next = 1
         # addres.next = 8196
         # yield delay(2)

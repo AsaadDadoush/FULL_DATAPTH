@@ -7,7 +7,7 @@ randrange = random.randrange
 @block
 def mux_3to1(i0, i1, i2, sel, out):
 
-    @always_comb
+    @always(i0, i1, i2, sel)
     def mux3to1():
         if sel == 0:
             out.next = i0
