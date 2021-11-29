@@ -56,7 +56,6 @@ def convert():
     test.convert(hdl='Verilog')
 
 
-tb = test()
-tb.run_sim(500)
-convert()
-
+# tb = test()
+# tb.run_sim(500)
+# convert()
