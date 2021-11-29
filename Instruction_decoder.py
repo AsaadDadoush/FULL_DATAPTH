@@ -127,6 +127,7 @@ def convert():
     ins.convert(hdl='Verilog')
 
 
-convert()
-tb = Test()
-tb.run_sim(100)
+# convert()
+# tb = Test()
+# tb.run_sim(100)
+
