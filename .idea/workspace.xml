@@ -4,43 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3aa8f1e3-a0bf-404d-b9b9-d299a6fb9f7f" name="Changes" comment="Update">
-      <change afterPath="$PROJECT_DIR$/DATA_PATH.py" afterDir="false" />
+    <list default="true" id="3aa8f1e3-a0bf-404d-b9b9-d299a6fb9f7f" name="Changes" comment="mux 8 to 1">
       <change afterPath="$PROJECT_DIR$/md3ka.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ALU/ALU.py" beforeDir="false" afterPath="$PROJECT_DIR$/ALU.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ALU/alu.v" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ALU/tb_alu.v" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Control/control.py" beforeDir="false" afterPath="$PROJECT_DIR$/control.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Decoder/Instruction decoder.py" beforeDir="false" afterPath="$PROJECT_DIR$/Instruction_decoder.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Decoder/ins_dec.v" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Decoder/tb_ins_dec.v" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Memory/mem.py" beforeDir="false" afterPath="$PROJECT_DIR$/mem.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Memory/memory.py" beforeDir="false" afterPath="$PROJECT_DIR$/memory.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Memory/memory.v" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Memory/tb_memory.v" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Mux/Mux8_1.py" beforeDir="false" afterPath="$PROJECT_DIR$/Mux8_1.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Mux/mux2_1.py" beforeDir="false" afterPath="$PROJECT_DIR$/mux2_1.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Mux/mux2_1.v" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Mux/mux3_1.py" beforeDir="false" afterPath="$PROJECT_DIR$/mux3_1.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Mux/mux_3to1.v" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Mux/tb_mux2_1.v" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Mux/tb_mux_3to1.v" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PC/PC.py" beforeDir="false" afterPath="$PROJECT_DIR$/PC.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PC/PC_gen.v" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PC/PC_genrator.py" beforeDir="false" afterPath="$PROJECT_DIR$/PC_genrator.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PC/pc.v" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PC/tb_PC_gen.v" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PC/tb_pc.v" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/extender/extender.py" beforeDir="false" afterPath="$PROJECT_DIR$/extender.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/extender/extender.v" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/extender/tb_extender.v" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/register/registers.py" beforeDir="false" afterPath="$PROJECT_DIR$/registers.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/register/registers.v" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/register/tb_registers.v" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/shifter/shifter.py" beforeDir="false" afterPath="$PROJECT_DIR$/shifter.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shifter/shifter.v" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/shifter/tb_shifter.v" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -325,7 +291,126 @@
       <option name="project" value="LOCAL" />
       <updated>1638124866421</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="mux 8 to 1">
+      <created>1638189690973</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1638189690973</updated>
+    </task>
+    <task id="LOCAL-00014" summary="mux 8 to 1">
+      <created>1638189708832</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1638189708832</updated>
+    </task>
+    <task id="LOCAL-00015" summary="ALU">
+      <created>1638189735763</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1638189735763</updated>
+    </task>
+    <task id="LOCAL-00016" summary="Control">
+      <created>1638189765815</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1638189765815</updated>
+    </task>
+    <task id="LOCAL-00017" summary="Data Path">
+      <created>1638189797282</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1638189797282</updated>
+    </task>
+    <task id="LOCAL-00018" summary="Extender">
+      <created>1638189832000</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1638189832000</updated>
+    </task>
+    <task id="LOCAL-00019" summary="Decoder">
+      <created>1638189870196</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1638189870196</updated>
+    </task>
+    <task id="LOCAL-00020" summary="Memory">
+      <created>1638189901946</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1638189901946</updated>
+    </task>
+    <task id="LOCAL-00021" summary="mux 2 to 1">
+      <created>1638189930682</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1638189930682</updated>
+    </task>
+    <task id="LOCAL-00022" summary="Pc Gen">
+      <created>1638189958587</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1638189958587</updated>
+    </task>
+    <task id="LOCAL-00023" summary="Registers">
+      <created>1638189985044</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1638189985044</updated>
+    </task>
+    <task id="LOCAL-00024" summary="Shifter">
+      <created>1638190022845</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1638190022845</updated>
+    </task>
+    <task id="LOCAL-00025" summary="PC">
+      <created>1638190047656</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1638190047656</updated>
+    </task>
+    <task id="LOCAL-00026" summary="ALU">
+      <created>1638190107587</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1638190107587</updated>
+    </task>
+    <task id="LOCAL-00027" summary="Memory">
+      <created>1638190117087</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1638190117087</updated>
+    </task>
+    <task id="LOCAL-00028" summary="mux 3 to 1">
+      <created>1638190125749</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1638190125749</updated>
+    </task>
+    <task id="LOCAL-00029" summary="mux 8 to 1">
+      <created>1638190134291</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1638190134291</updated>
+    </task>
+    <option name="localTasksCounter" value="30" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -345,6 +430,19 @@
     <MESSAGE value="test" />
     <MESSAGE value="update + TODO" />
     <MESSAGE value="Update" />
-    <option name="LAST_COMMIT_MESSAGE" value="Update" />
+    <MESSAGE value="Control" />
+    <MESSAGE value="Data Path" />
+    <MESSAGE value="Extender" />
+    <MESSAGE value="Decoder" />
+    <MESSAGE value="mux 2 to 1" />
+    <MESSAGE value="Pc Gen" />
+    <MESSAGE value="Registers" />
+    <MESSAGE value="Shifter" />
+    <MESSAGE value="PC" />
+    <MESSAGE value="ALU" />
+    <MESSAGE value="Memory" />
+    <MESSAGE value="mux 3 to 1" />
+    <MESSAGE value="mux 8 to 1" />
+    <option name="LAST_COMMIT_MESSAGE" value="mux 8 to 1" />
   </component>
 </project>
