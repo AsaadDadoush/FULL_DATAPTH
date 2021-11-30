@@ -369,4 +369,4 @@ def convert():
     ins.convert(hdl='Verilog')
 
 
-# convert()
+convert()
