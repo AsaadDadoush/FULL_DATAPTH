@@ -1,3 +1,4 @@
+import math
 import struct
 
 from myhdl import *
@@ -42,18 +43,18 @@ def to_number(buff: bytearray, size, signed, little_endian=True):
 
 program = Memory()
 program.load_binary_file(path="D:/rarsProject/text.txt", starting_address=0)
-program.load_binary_file(path="D:/rarsProject/data.txt", starting_address=8191)
-
+program.load_binary_file(path="D:/rarsProject/data.txt", starting_address=8192)
+print(bin(to_number(program.read(0, 4), 4, True)))
 @block
 def memory(data_in, enable, size, addres, data_out):
     # MainMemory = [Signal(intbv(0)[32:]) for i in range(12287)]
-    Mem1 = [Signal(intbv(0)[8:]) for i in range(32)]
-    Mem2 = [Signal(intbv(0)[8:]) for i in range(32)]
-    Mem3 = [Signal(intbv(0)[8:]) for i in range(32)]
-    Mem4 = [Signal(intbv(0)[8:]) for i in range(32)]
+    Mem1 = [Signal(intbv(0)[8:]) for i in range(3072)]
+    Mem2 = [Signal(intbv(0)[8:]) for i in range(3072)]
+    Mem3 = [Signal(intbv(0)[8:]) for i in range(3072)]
+    Mem4 = [Signal(intbv(0)[8:]) for i in range(3072)]
     # data_out = Signal(intbv(0)[32:])
 
-    @always_comb
+    @always(data_in)
     def WriteLogic():
         if enable == 1:
             if size == 0:
@@ -71,12 +72,12 @@ def memory(data_in, enable, size, addres, data_out):
 
     @always_comb
     def readLogic():
-        if size == 0:
-            data_out.next = concat("00000000", "00000000", "00000000", Mem1[addres])
-        elif size == 1:
-            data_out.next = concat("00000000", "00000000", Mem2[addres], Mem1[addres])
-        else:
-            data_out.next = concat(Mem4[addres], Mem3[addres], Mem2[addres], Mem1[addres])
+            if size == 0:
+                data_out.next = concat("00000000", "00000000", "00000000", Mem1[addres])
+            elif size == 1:
+                data_out.next = concat("00000000", "00000000", Mem2[addres], Mem1[addres])
+            else:
+                data_out.next = concat(Mem4[addres], Mem3[addres], Mem2[addres], Mem1[addres])
 
     return instances()
 
@@ -87,13 +88,8 @@ def testbench():
     data_in = Signal(intbv(0)[32:])
     data_out = Signal(intbv(0)[32:])
     enable = Signal(bool(0))
-    # clk = Signal(bool(0))
     size = Signal(intbv(0)[2:])
-    ins = memory(addres, data_in, enable, data_out, size)
-
-    # @always(delay(1))
-    # def clkgen():
-    #     clk.next = not clk
+    ins = memory(data_in, enable, size, addres, data_out)
 
     @instance
     def monitor():
@@ -102,23 +98,31 @@ def testbench():
 
         enable.next = 1
         yield delay(2)
-        for i in range(12284):
-            size.next = 0
+        Load_Counter = 0
+        for i in range(3072):
+            size.next = 2
             yield delay(1)
-            data_in.next, addres.next = intbv(to_number(program.read(i, 1), 1, True))[32:], i
-            yield delay(1)
-            print("%s  | %s |   %s  |  %s " % (addres + 0, data_in + 0, data_out + 0, bin(enable)))
-        # for i in range(8280):
-        #     size.next = 0
-        #     addres.next = i
-        #     enable.next = 0
-        #     yield delay(2)
-        #     print("%s  | %s |   %s  |  %s " % (addres + 0, data_in + 0, bin(data_out,32), bin(enable)))
-        size.next = 0
-        addres.next = 8268
+            addres.next = i
+            data_in.next = intbv(to_number(program.read(Load_Counter, 4), 4, True))[32:]
+            yield delay(6)
+            print("%s  | %s |   %s  |  %s " % (i, data_in + 0, data_out + 0, bin(enable)))
+            Load_Counter+=4
+
         yield delay(2)
-        print(bin(data_out, 32))
-        # yield delay(1)
+        enable.next = 0
+        for i in range(3072):
+            yield delay(2)
+            enable.next = 0
+            size.next = 2
+            addres.next = i
+            yield delay(2)
+            print("%s  | %s |   %s  |  %s " % (i, data_in + 0, data_out + 0, bin(enable)))
+
+        size.next = 1
+        addres.next = 2049
+        yield delay(2)
+        print(data_out+0)
+        yield delay(1)
         # print(to_number(program.read(8192, 4), 4, True))
 
     return instances()
@@ -129,12 +133,11 @@ def convert():
     data_in = Signal(intbv(0)[32:])
     data_out = Signal(intbv(0)[32:])
     enable = Signal(bool(0))
-    # clk = Signal(bool(0))
     size = Signal(intbv(0)[2:])
     tst = memory(data_in, enable, size, addres, data_out)
     tst.convert(hdl='Verilog')
 
 
 # convert()
-tb = testbench()
-tb.run_sim(90000)
+# tb = testbench()
+# tb.run_sim()
