@@ -4,13 +4,13 @@ from myhdl import *
 
 
 @block
-def control(opcode, func3, func7, branch_result, size_sel, operation_sel, enable_write,PC_genrator_sel, imm_sel, rs2_or_imm_or_4,
-            PC_or_Address, PC_or_rs1, ALU_or_load_or_immShiftedBy12,Shift_amount, Enable_Reg):
+def control(opcode, func3, func7, branch_result, size_sel, operation_sel, enable_write, PC_genrator_sel, imm_sel, rs2_or_imm_or_4,
+            PC_or_Address, PC_or_rs1, ALU_or_load_or_immShiftedBy12, Shift_amount, Enable_Reg, sign_selection):
     @always(opcode and func7 and func3 and branch_result)
     def control_cir():
         Shift_amount.next = 0
         imm_sel.next = 0
-        # msb_or_zero.next = 0
+        sign_selection.next = 0
         size_sel.next = 0
         enable_write.next = 0
         PC_genrator_sel.next = 0
@@ -24,7 +24,7 @@ def control(opcode, func3, func7, branch_result, size_sel, operation_sel, enable
         if opcode == 0b0110011:
             Shift_amount.next = 0
             imm_sel.next = 0
-            # msb_or_zero.next = 0
+            sign_selection.next = 2
             size_sel.next = 2
             enable_write.next = 0
             PC_genrator_sel.next = 0
@@ -97,7 +97,7 @@ def control(opcode, func3, func7, branch_result, size_sel, operation_sel, enable
 
         # I-type
         elif opcode == 0b0010011:
-            # msb_or_zero.next = 0
+            sign_selection.next = 2
             size_sel.next = 2
             enable_write.next = 0
             PC_genrator_sel.next = 0
@@ -158,27 +158,27 @@ def control(opcode, func3, func7, branch_result, size_sel, operation_sel, enable
             # load Byte
             if func3 == 0x0:
                 size_sel.next = 0
-                # msb_or_zero.next = 0
+                sign_selection.next = 0
 
             # load Half
             elif func3 == 0x1:
                 size_sel.next = 1
-                # msb_or_zero.next = 0
+                sign_selection.next = 1
 
             # load Word
             elif func3 == 0x2:
                 size_sel.next = 2
-                # msb_or_zero.next = 0
+                sign_selection.next = 2
 
             # load Byte(U)
             elif func3 == 0x4:
                 size_sel.next = 0
-                # msb_or_zero.next = 1
+                sign_selection.next = 2
 
             # load Half(U)
             else:
                 size_sel.next = 1
-                # msb_or_zero.next = 1
+                sign_selection.next = 2
 
         # S-Type
         elif opcode == 0b0100011:
@@ -192,7 +192,7 @@ def control(opcode, func3, func7, branch_result, size_sel, operation_sel, enable
             Enable_Reg.next = 0
             Shift_amount.next = 0
             ALU_or_load_or_immShiftedBy12.next = 0
-            # msb_or_zero.next = 0
+            sign_selection.next = 2
             # Store Byte
             if func3 == 0x0:
                 size_sel.next = 0
@@ -215,7 +215,7 @@ def control(opcode, func3, func7, branch_result, size_sel, operation_sel, enable
             PC_or_Address.next = 0
             PC_or_rs1.next = 1
             Enable_Reg.next = 0
-            # msb_or_zero.next = 0
+            sign_selection.next = 2
             ALU_or_load_or_immShiftedBy12.next = 0
 
             # Branch ==
@@ -262,7 +262,7 @@ def control(opcode, func3, func7, branch_result, size_sel, operation_sel, enable
                     PC_genrator_sel.next = 0
         # J-type (Jump And Link)
         elif opcode == 0b1101111:
-            # msb_or_zero.next = 0
+            sign_selection.next = 2
             size_sel.next = 2
             operation_sel.next = 0
             enable_write.next = 0
@@ -287,12 +287,12 @@ def control(opcode, func3, func7, branch_result, size_sel, operation_sel, enable
             PC_or_Address.next = 0
             PC_or_rs1.next = 0
             ALU_or_load_or_immShiftedBy12.next = 0
-            # msb_or_zero.next = 0
+            sign_selection.next = 2
         # U-type (Load Upper Imm)
         elif opcode == 0b0110111:
             PC_or_rs1.next = 0
             rs2_or_imm_or_4.next = 0
-            # msb_or_zero.next = 0
+            sign_selection.next = 2
             size_sel.next = 2
             operation_sel.next = 0
             enable_write.next = 0
@@ -307,7 +307,7 @@ def control(opcode, func3, func7, branch_result, size_sel, operation_sel, enable
             print("On processing")
         # U-type (Add Upper Imm to PC)
         else:
-            # msb_or_zero.next = 0
+            sign_selection.next = 2
             size_sel.next = 2
             operation_sel.next = 0
             enable_write.next = 0
@@ -339,9 +339,9 @@ def test_bench():
     ALU_or_load_or_immShiftedBy12 = Signal(intbv(0)[2:])
     Shift_amount = Signal(intbv(0)[2:])
     Enable_Reg = Signal(bool(0))
-    # msb_or_zero = Signal(bool(0))
+    msb_or_zero = Signal(intbv(0)[2:])
     ins = control(opcode, func3, func7, branch_result, size_sel, operation_sel, enable_write,PC_genrator_sel, imm_sel, rs2_or_imm_or_4,
-            PC_or_Address, PC_or_rs1, ALU_or_load_or_immShiftedBy12,Shift_amount, Enable_Reg)
+            PC_or_Address, PC_or_rs1, ALU_or_load_or_immShiftedBy12,Shift_amount, Enable_Reg, msb_or_zero)
 
 
 
@@ -362,10 +362,10 @@ def convert():
     ALU_or_load_or_immShiftedBy12 = Signal(intbv(0)[2:])
     Shift_amount = Signal(intbv(0)[2:])
     Enable_Reg = Signal(bool(0))
-    # msb_or_zero = Signal(bool(0))
+    msb_or_zero = Signal(intbv(0)[2:])
     ins = control(opcode, func3, func7, branch_result, size_sel, operation_sel, enable_write, PC_genrator_sel, imm_sel,
                   rs2_or_imm_or_4,
-                  PC_or_Address, PC_or_rs1, ALU_or_load_or_immShiftedBy12, Shift_amount, Enable_Reg)
+                  PC_or_Address, PC_or_rs1, ALU_or_load_or_immShiftedBy12, Shift_amount, Enable_Reg,msb_or_zero)
     ins.convert(hdl='Verilog')
 
 
