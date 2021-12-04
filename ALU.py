@@ -4,7 +4,7 @@ from myhdl import *
 
 @block
 def alu(a, b, sel, out):
-    @always_comb
+    @always(a, b, sel)
     def alu():
         # ADD
         if sel == 0:
@@ -79,6 +79,11 @@ def alu(a, b, sel, out):
         # Remainder (U)
         else:
             out.next = a.signed() % b[32:]
+        print("================================ ALU ================================")
+        print("a: ", a+0, " b: ", b+0)
+        print("Operation: ", sel + 0)
+        print("ALU out: ", out.next+0)
+        print("")
 
     return alu
 
@@ -86,9 +91,9 @@ def alu(a, b, sel, out):
 @block
 def testbench():
     sel = Signal(intbv(0)[5:])
-    a = Signal(intbv(0)[32:])
-    b = Signal(intbv(0)[32:])
-    out = Signal(intbv(0)[32:])
+    a = Signal(intbv(0, min=-2**31, max=2**31))
+    b = Signal(intbv(0, min=-2**31, max=2**31))
+    out = Signal(intbv(0, min=-2**31, max=2**31))
     ins = alu(a, b, sel, out)
     operation = ""
 
@@ -96,7 +101,7 @@ def testbench():
     def stimulus():
         print("A   OP  B  = Out | selection")
         for i in range(17):
-            a.next, b.next, sel.next = 20, 2, i
+            a.next, b.next, sel.next = 0, -1, i
             yield delay(5)
             yield delay(1)
             operation = ""
@@ -121,30 +126,33 @@ def testbench():
             elif sel == 9:
                 operation = "=!"
             elif sel == 10:
-                operation = "<"
+                operation = "<="
             elif sel == 11:
                 operation = "< (U)"
             elif sel == 12:
                 operation = "<="
             elif sel == 13:
-                operation = ">> imm[4:0] Arith"
+                operation = ">> Arith*"
             elif sel == 14:
-                operation = "< (U)"
+                operation = " >= (U)"
             elif sel == 15:
-                operation = ">= (U)"
+                operation = "Div (U)"
+            elif sel == 16:
+                operation = " % "
             else:
-                operation = "%"
+                operation = " % (U)"
+            print("Sel: ",sel+0)
             yield delay(1)
             print("%s %s %s = %s " % (a + 0, operation, b + 0, out + 0))
-
+            print('='*20)
     return instances()
 
 
 def convert():
     sel = Signal(intbv(0)[5:])
-    a = Signal(intbv(0)[32:])
-    b = Signal(intbv(0)[32:])
-    out = Signal(intbv(0)[32:0])
+    a = Signal(intbv(0, min=-2**31, max=2*31))
+    b = Signal(intbv(0, min=-2**31, max=2**31))
+    out = Signal(intbv(0, min=-2**31, max=2**31))
     ins = alu(a, b, sel, out)
     ins.convert(hdl='Verilog')
 
