@@ -7,8 +7,9 @@ from myhdl import *
 def control(opcode, func3, func7, branch_result, size_sel, operation_sel, enable_write, PC_genrator_sel, imm_sel,
             rs2_or_imm_or_4,
             PC_or_Address, PC_or_rs1, ALU_or_load_or_immShiftedBy12, Shift_amount, Enable_Reg, sign_selection):
-    @always(opcode and func7 and func3 and branch_result)
+    @always(opcode, func7, func3, branch_result)
     def control_cir():
+        print("============================== Control ==============================")
         Shift_amount.next = 0
         imm_sel.next = 0
         sign_selection.next = 0
@@ -23,6 +24,7 @@ def control(opcode, func3, func7, branch_result, size_sel, operation_sel, enable
         operation_sel.next = 0
         # R-type
         if opcode == 0b0110011:
+            print("R-type")
             Shift_amount.next = 0
             imm_sel.next = 0
             sign_selection.next = 2
@@ -98,6 +100,7 @@ def control(opcode, func3, func7, branch_result, size_sel, operation_sel, enable
 
         # I-type
         elif opcode == 0b0010011:
+            print("I-type")
             sign_selection.next = 2
             size_sel.next = 2
             enable_write.next = 0
@@ -108,7 +111,7 @@ def control(opcode, func3, func7, branch_result, size_sel, operation_sel, enable
             PC_or_rs1.next = 1
             ALU_or_load_or_immShiftedBy12.next = 0
             Enable_Reg.next = 1
-            Shift_amount.next = 0
+            Shift_amount.next = 2
             # Add imm
             if func3 == 0x0:
                 operation_sel.next = 0
@@ -146,6 +149,7 @@ def control(opcode, func3, func7, branch_result, size_sel, operation_sel, enable
 
         # I-type (LOAD instructions)
         elif opcode == 0b0000011:
+            print("I-type (LOAD instructions)")
             operation_sel.next = 0
             enable_write.next = 0
             PC_genrator_sel.next = 0
@@ -167,7 +171,7 @@ def control(opcode, func3, func7, branch_result, size_sel, operation_sel, enable
                 sign_selection.next = 1
 
             # load Word
-            elif func3 == 0x2:
+            elif func3 == 0b010:
                 size_sel.next = 2
                 sign_selection.next = 2
 
@@ -183,6 +187,7 @@ def control(opcode, func3, func7, branch_result, size_sel, operation_sel, enable
 
         # S-Type
         elif opcode == 0b0100011:
+            print("S-type")
             operation_sel.next = 0
             enable_write.next = 1
             PC_genrator_sel.next = 0
@@ -263,6 +268,7 @@ def control(opcode, func3, func7, branch_result, size_sel, operation_sel, enable
                     PC_genrator_sel.next = 0
         # J-type (Jump And Link)
         elif opcode == 0b1101111:
+            print("Jump And Link")
             sign_selection.next = 2
             size_sel.next = 2
             operation_sel.next = 0
@@ -277,6 +283,7 @@ def control(opcode, func3, func7, branch_result, size_sel, operation_sel, enable
             ALU_or_load_or_immShiftedBy12.next = 0
         # I-type (Jump And Link Reg)
         elif opcode == 0b1100111:
+            print("Jump And Link Reg")
             size_sel.next = 2
             operation_sel.next = 0
             enable_write.next = 0
@@ -291,6 +298,7 @@ def control(opcode, func3, func7, branch_result, size_sel, operation_sel, enable
             sign_selection.next = 2
         # U-type (Load Upper Imm)
         elif opcode == 0b0110111:
+            print("Load Upper Imm")
             PC_or_rs1.next = 0
             rs2_or_imm_or_4.next = 0
             sign_selection.next = 2
@@ -305,21 +313,41 @@ def control(opcode, func3, func7, branch_result, size_sel, operation_sel, enable
             ALU_or_load_or_immShiftedBy12.next = 2  # rd = imm << 12
         # U-type (Add Upper Imm to PC)
         elif opcode == 0b1110011:
-            print("On processing")
+            print("Ecall")
+            # raise StopSimulation
         # U-type (Add Upper Imm to PC)
         else:
-            sign_selection.next = 2
+            print("Add Upper Imm to PC")
+            sign_selection.next = 0
             size_sel.next = 2
             operation_sel.next = 0
             enable_write.next = 0
             PC_genrator_sel.next = 0
             imm_sel.next = 3
-            Shift_amount.next = 2
+            Shift_amount.next = 1
             Enable_Reg.next = 1
             rs2_or_imm_or_4.next = 1
             PC_or_Address.next = 0
             PC_or_rs1.next = 0
             ALU_or_load_or_immShiftedBy12.next = 0  # rd = PC + (imm << 12)
+        print("Opcode : %s" % bin(opcode, 7))
+        print("func3 : %s" % bin(func3, 3))
+        print("func7 : %s" % bin(func7, 7))
+        print('-' * 30)
+        print("size_sel: ", size_sel.next + 0)
+        print("operation_sel: ", operation_sel.next + 0)
+        print("enable_write: ", enable_write.next + 0)
+        print("PC_genrator_sel: ", PC_genrator_sel.next+ 0)
+        print("imm_sel: ", imm_sel.next + 0)
+        print("rs2_or_imm_or_4: ", rs2_or_imm_or_4.next + 0)
+        print("PC_or_Address: ", PC_or_Address.next + 0)
+        print("PC_or_rs1: ", PC_or_rs1.next + 0)
+        print("ALU_or_load_or_immShiftedBy12: ", ALU_or_load_or_immShiftedBy12.next + 0)
+        print("Shift_amount: ", Shift_amount.next + 0)
+        print("Enable_Reg: ", Enable_Reg.next + 0)
+        print("sign_selection: ", sign_selection.next + 0)
+        print("")
+
 
     return instances()
 
@@ -530,6 +558,6 @@ def convert():
     ins.convert(hdl='Verilog')
 
 
-test = test_bench()
-test.run_sim()
-convert()
+# test = test_bench()
+# test.run_sim()
+# convert()
