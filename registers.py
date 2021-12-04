@@ -16,6 +16,20 @@ def registers(rs1, rs2, rd, rs1_out, rs2_out, enable, DataWrite):
         if enable == 1:
 
             Reg[rd].next = DataWrite
+            print("=========================== Register File ===========================")
+            print("Enable: ", enable + 0)
+            print("rd: ", rd.next + 0)
+            print("rs1: ", rs1 + 0)
+            print("rs2: ", rs2 + 0)
+            print("Data in: ", DataWrite + 0)
+            print("rs1_out: ", rs1_out.next + 0)
+            print("rs2_out: ", rs2_out.next + 0)
+
+            print("------------ Registers -------------")
+            for i in range(32):
+                print("Reg[%s]: %s" % (i, Reg[i].next + 0))
+            print("")
+        return register_sub
 
     return register_sub
 
@@ -46,13 +60,12 @@ def testbench():
         print('======================================================')
         rs1.next = 0b00111
         rs2.next = 0b00011
-        rd.next = 0b00000
         yield delay(10)
 
         print("rs1      | rs2   |   rd     |         rs1_out                    |           rs2_out      "
               "                 |                data              |   enable  |")
         print("%s    | %s |   %s  |  %s  |    %s     | %s |        %s  | " % \
-              (bin(rs1, 5), bin(rs2, 5), bin(rd, 5), bin(rs1_out, 32), bin(rs1_out, 32), bin(DataWrite, 32), bin(enable, 1)))
+              (bin(rs1, 5), bin(rs2, 5), bin(rd, 5), bin(rs1_out, 32), bin(rs2_out, 32), bin(DataWrite, 32), bin(enable, 1)))
 
         DataWrite.next = 0b01111
         enable.next = 1
