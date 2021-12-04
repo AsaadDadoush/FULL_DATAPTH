@@ -1,14 +1,21 @@
 from myhdl import*
+
+
 @block
-def pc(pass_input,out,reset,clk):
-    @always_seq(clk.posedge,reset=reset)
+def pc(pass_input, out):
+
+    @always(pass_input)
     def pcblock():
-        out.next=pass_input
+        out.next = pass_input
+        print("================================ PC =================================")
+        print("Data  in: ", pass_input + 0)
+        print("Data out: ", out.next + 0)
+        print("")
     return instances()
 
 @block
 def test():
-    pass_input = Signal(intbv(0)[32:]) #to represrent 16384
+    pass_input = Signal(intbv(0)[32:])
     out = Signal(intbv(0)[32:])
     clk = Signal(bool(0))
     reset= ResetSignal(0, active=1, isasync=True)
@@ -29,15 +36,16 @@ def test():
 
     return instances()
 
+
 def convert():
     pass_input = Signal(intbv(0)[32:])  # to represrent 16384
     out = Signal(intbv(0)[32:])
-    clk = Signal(bool(0))
-    reset = ResetSignal(0, active=1, isasync=True)
-    test = pc(pass_input, out,reset, clk)
+    # clk = Signal(bool(0))
+    # reset = ResetSignal(0, active=1, isasync=True)
+    test = pc(pass_input, out)
     test.convert(hdl='Verilog')
 
-#
+
 # convert()
 # tb=test()
 # tb.run_sim(500)
